@@ -398,7 +398,7 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="/cdn-cgi/l/email-protection#7a1b09121311171b12180f184f4c3a1d171b131654191517" class="nav-cta">Hire Me →</a>
+  <a href="#contact" class="nav-cta" onclick="openEmail(event)">Hire Me →</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
   </button>
@@ -409,7 +409,7 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
   <a href="#projects" onclick="closeMenu()">Projects</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="/cdn-cgi/l/email-protection#a5c4d6cdcccec8c4cdc7d0c79093e5c2c8c4ccc98bc6cac8" class="m-cta" onclick="closeMenu()">Hire Me →</a>
+  <a href="#contact" class="m-cta" onclick="openEmail(event);closeMenu()">Hire Me →</a>
 </div>
 
 <!-- HERO -->
@@ -556,7 +556,7 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
       <p class="ct-sub">Open to full-time roles, freelance projects, and remote opportunities worldwide. Let's build something great.</p>
     </div>
     <div class="ct-cards">
-      <a href="/cdn-cgi/l/email-protection#dabba9b2b3b1b7bbb2b8afb8efec9abdb7bbb3b6f4b9b5b7" class="ct-card"><div class="ct-icon">✉️</div><div><div class="ct-lbl">Email</div><div class="ct-val"><span class="__cf_email__" data-cfemail="4f2e3c272624222e272d3a2d7a790f28222e2623612c2022">[email&#160;protected]</span></div></div></a>
+      <div class="ct-card" onclick="openEmail()" style="cursor:pointer"><div class="ct-icon">✉️</div><div><div class="ct-lbl">Email</div><div class="ct-val" id="email-display">ashikmahbub56 @ gmail.com</div></div></div>
       <a href="https://github.com/Ashikmahbub" target="_blank" class="ct-card"><div class="ct-icon">🐙</div><div><div class="ct-lbl">GitHub</div><div class="ct-val">github.com/Ashikmahbub</div></div></a>
       <a href="https://linkedin.com/in/ashik-mahbub-a691231b1" target="_blank" class="ct-card"><div class="ct-icon">💼</div><div><div class="ct-lbl">LinkedIn</div><div class="ct-val">Ashik Mahbub</div></div></a>
       <a href="https://wa.me/8801793703156" target="_blank" class="ct-card"><div class="ct-icon">💬</div><div><div class="ct-lbl">WhatsApp</div><div class="ct-val">+880 1793 703156</div></div></a>
@@ -569,7 +569,15 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
   <p>Barisal, Bangladesh</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+// build email at runtime so Cloudflare can't intercept it
+function getEmail(){ return ['ashikmahbub56','gmail','com'].join('@').replace('@gmail','@gmail'); }
+function openEmail(e){ if(e)e.preventDefault(); window.location='mai'+'lto:'+getEmail(); }
+// show real email in contact card after page loads
+document.addEventListener('DOMContentLoaded',function(){
+  var el=document.getElementById('email-display');
+  if(el) el.textContent=getEmail();
+});
 let open=false;
 function toggleMenu(){
   open=!open;
