@@ -4,43 +4,43 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Ashik Mahbub — Full Stack Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Syne:wght@700;800&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  /* Royal Navy + Amber palette */
-  --navy-deep:   #0d1b2e;
-  --navy:        #112240;
-  --navy-mid:    #1a3557;
-  --navy-light:  #1e4080;
-  --navy-muted:  #243b55;
-  --amber:       #f0a500;
-  --amber2:      #fbbf24;
-  --amber-dim:   #d97706;
-  --amber-glow:  rgba(240,165,0,0.12);
-  --amber-pale:  rgba(240,165,0,0.06);
+  --bg:          #0f1117;
+  --bg2:         #151820;
+  --bg3:         #1c2130;
+  --surface:     #1e2535;
+  --surface2:    #252d3d;
+  --blue:        #3b82f6;
+  --blue2:       #60a5fa;
+  --blue-dim:    #2563eb;
+  --blue-glow:   rgba(59,130,246,0.12);
+  --blue-pale:   rgba(59,130,246,0.06);
+  --slate:       #64748b;
+  --slate2:      #94a3b8;
   --white:       #ffffff;
-  --off-white:   #e8edf4;
-  --gray:        #8899aa;
-  --gray2:       #5a7080;
-  --border:      rgba(255,255,255,0.08);
-  --border2:     rgba(240,165,0,0.2);
-  --card:        rgba(255,255,255,0.04);
-  --card-hover:  rgba(255,255,255,0.07);
-  --shadow:      0 4px 20px rgba(0,0,0,0.3);
-  --shadow-lg:   0 20px 60px rgba(0,0,0,0.4);
-  --shadow-amber:0 8px 32px rgba(240,165,0,0.2);
+  --off-white:   #e2e8f0;
+  --muted:       #8892a4;
+  --border:      rgba(255,255,255,0.06);
+  --border2:     rgba(59,130,246,0.2);
+  --shadow:      0 4px 20px rgba(0,0,0,0.4);
+  --shadow-lg:   0 24px 60px rgba(0,0,0,0.5);
+  --shadow-blue: 0 8px 32px rgba(59,130,246,0.25);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{background:var(--navy);color:var(--off-white);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
+body{background:var(--bg);color:var(--off-white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 
-/* ── SUBTLE TEXTURE ── */
-body::after{
+/* subtle grid texture */
+body::before{
   content:'';position:fixed;inset:0;
-  background-image:radial-gradient(rgba(240,165,0,0.03) 1px,transparent 1px);
-  background-size:32px 32px;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,0.03) 1px,transparent 1px);
+  background-size:48px 48px;
   pointer-events:none;z-index:0;
 }
 
@@ -48,309 +48,314 @@ body::after{
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;justify-content:space-between;align-items:center;
-  padding:0 48px;height:64px;
-  background:rgba(13,27,46,0.92);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  padding:0 52px;height:62px;
+  background:rgba(15,17,23,0.94);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border-bottom:1px solid var(--border);
 }
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px;color:var(--white)}
-.nav-logo b{color:var(--amber)}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray);letter-spacing:0.14em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--amber)}
-.nav-cta{
-  font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:0.08em;
-  background:var(--amber);color:var(--navy-deep);
-  padding:9px 22px;border-radius:4px;
-  transition:all .25s;white-space:nowrap;font-weight:400;
+.nav-logo{
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;
+  font-size:17px;letter-spacing:-0.3px;color:var(--white);
+  display:flex;align-items:center;gap:2px;
 }
-.nav-cta:hover{background:var(--amber2);transform:translateY(-1px);box-shadow:var(--shadow-amber)}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;transition:color .2s;
+}
+.nav-links a:hover{color:var(--blue2)}
+.nav-cta{
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;
+  background:var(--blue);color:var(--white);
+  padding:8px 20px;border-radius:5px;
+  transition:all .25s;white-space:nowrap;font-weight:500;
+}
+.nav-cta:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:var(--shadow-blue)}
 
-/* hamburger */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
 .hamburger span{display:block;width:22px;height:2px;background:var(--off-white);border-radius:2px;transition:all .3s}
 .mobile-menu{
-  display:none;position:fixed;top:64px;left:0;right:0;bottom:0;z-index:199;
-  background:rgba(13,27,46,0.98);backdrop-filter:blur(20px);
+  display:none;position:fixed;top:62px;left:0;right:0;bottom:0;z-index:199;
+  background:rgba(15,17,23,0.98);backdrop-filter:blur(20px);
   flex-direction:column;align-items:center;justify-content:center;gap:32px;
 }
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;color:var(--white);transition:color .2s}
-.mobile-menu a:hover{color:var(--amber)}
-.mobile-menu .m-cta{font-family:'DM Mono',monospace;font-size:13px;background:var(--amber);color:var(--navy-deep);padding:14px 40px;border-radius:4px;margin-top:8px}
+.mobile-menu a{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);transition:color .2s}
+.mobile-menu a:hover{color:var(--blue)}
+.mobile-menu .m-cta{font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--blue);color:var(--white);padding:14px 40px;border-radius:5px;margin-top:8px}
 
 /* ── HERO ── */
 #hero{
   min-height:100svh;display:flex;align-items:center;
-  padding:88px 48px 60px;position:relative;overflow:hidden;
+  padding:88px 52px 60px;position:relative;overflow:hidden;
 }
-
-/* big navy gradient layers */
 .hero-bg{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(26,53,87,0.8) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(30,64,128,0.3) 0%, transparent 60%),
-    linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-mid) 100%);
+    radial-gradient(ellipse 55% 55% at 75% 15%, rgba(37,65,130,0.35) 0%,transparent 65%),
+    radial-gradient(ellipse 35% 45% at 5% 85%, rgba(59,130,246,0.08) 0%,transparent 60%),
+    linear-gradient(160deg, var(--bg) 0%, var(--bg2) 55%, var(--bg3) 100%);
   pointer-events:none;
 }
-/* amber accent glow top-right */
 .hero-glow{
-  position:absolute;top:-100px;right:-100px;
-  width:500px;height:500px;
-  background:radial-gradient(circle,rgba(240,165,0,0.08) 0%,transparent 65%);
+  position:absolute;top:-80px;right:-80px;
+  width:480px;height:480px;
+  background:radial-gradient(circle,rgba(59,130,246,0.07) 0%,transparent 65%);
   pointer-events:none;
 }
-
 .hero-inner{
   max-width:1160px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:1fr 360px;
-  gap:64px;align-items:center;
+  display:grid;grid-template-columns:1fr 300px;
+  gap:72px;align-items:center;
   position:relative;z-index:1;
 }
 
-/* pill */
+/* availability pill */
 .avail{
   display:inline-flex;align-items:center;gap:8px;
-  font-family:'DM Mono',monospace;font-size:11px;color:var(--amber);
-  letter-spacing:0.14em;text-transform:uppercase;
-  background:rgba(240,165,0,0.08);border:1px solid rgba(240,165,0,0.25);
-  padding:6px 14px;border-radius:4px;margin-bottom:24px;width:fit-content;
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--blue2);
+  letter-spacing:0.12em;text-transform:uppercase;
+  background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.22);
+  padding:6px 14px;border-radius:4px;margin-bottom:26px;width:fit-content;
 }
-.avail-dot{width:7px;height:7px;background:var(--amber);border-radius:50%;animation:pulse 2.2s ease infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.8)}}
+.avail-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2.4s ease infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
 
 /* name */
 .hero-name{
-  font-family:'Syne',sans-serif;font-weight:800;
-  font-size:clamp(44px,6.5vw,86px);
-  line-height:0.92;letter-spacing:-2.5px;
-  color:var(--white);margin-bottom:6px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;
+  font-size:clamp(42px,6vw,80px);
+  line-height:1;letter-spacing:-2px;
+  color:var(--white);margin-bottom:4px;
 }
-.hero-name .cursive{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:300;font-style:italic;
-  font-size:clamp(56px,8vw,108px);
-  color:var(--amber);
-  letter-spacing:-2px;line-height:0.88;display:block;
-}
+.hero-name .accent{color:var(--blue)}
 
 .hero-role{
-  font-family:'DM Mono',monospace;font-size:12px;color:var(--gray);
-  letter-spacing:0.06em;margin:22px 0 20px;
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);
+  letter-spacing:0.05em;margin:20px 0 18px;
   display:flex;align-items:center;gap:10px;
 }
-.hero-role::before{content:'';width:28px;height:1px;background:var(--amber)}
+.hero-role::before{content:'';width:24px;height:1px;background:var(--blue);flex-shrink:0}
 
-.hero-desc{font-size:15.5px;line-height:1.78;color:rgba(232,237,244,0.72);max-width:480px;margin-bottom:36px}
+.hero-desc{
+  font-size:15px;line-height:1.82;
+  color:rgba(226,232,240,0.68);
+  max-width:500px;margin-bottom:36px;
+  font-weight:400;
+}
 
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
-.btn-amber{
+.btn-blue{
   display:inline-flex;align-items:center;gap:8px;
-  background:var(--amber);color:var(--navy-deep);
-  padding:13px 28px;border-radius:4px;
-  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.06em;
-  font-weight:400;transition:all .25s;
+  background:var(--blue);color:var(--white);
+  padding:12px 26px;border-radius:5px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;
+  font-weight:500;transition:all .25s;
 }
-.btn-amber:hover{background:var(--amber2);transform:translateY(-2px);box-shadow:var(--shadow-amber)}
+.btn-blue:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:var(--shadow-blue)}
 .btn-ghost{
   display:inline-flex;align-items:center;gap:8px;
-  border:1px solid rgba(255,255,255,0.18);color:var(--off-white);
-  padding:12px 24px;border-radius:4px;
-  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.06em;
+  border:1px solid rgba(255,255,255,0.14);color:var(--off-white);
+  padding:11px 22px;border-radius:5px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;
   transition:all .25s;
 }
-.btn-ghost:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue2);transform:translateY(-2px)}
+.btn-cv{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(59,130,246,0.35);color:var(--blue2);
+  padding:11px 22px;border-radius:5px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;
+  transition:all .25s;background:rgba(59,130,246,0.06);
+}
+.btn-cv:hover{border-color:var(--blue);background:rgba(59,130,246,0.12);transform:translateY(-2px)}
 
 /* stats */
-.stats-row{display:flex;gap:40px;padding-top:28px;border-top:1px solid var(--border)}
-.stat-n{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--amber);line-height:1}
-.stat-l{font-family:'DM Mono',monospace;font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
+.stats-row{display:flex;gap:36px;padding-top:28px;border-top:1px solid var(--border)}
+.stat-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;color:var(--blue);line-height:1}
+.stat-l{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
 
 /* photo */
 .photo-col{position:relative}
 .photo-frame{
-  position:relative;border-radius:8px;overflow:hidden;
+  position:relative;border-radius:10px;overflow:hidden;
   aspect-ratio:3/4;
-  box-shadow:0 32px 80px rgba(0,0,0,0.5),0 8px 20px rgba(0,0,0,0.3);
-  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 32px 80px rgba(0,0,0,0.6),0 8px 20px rgba(0,0,0,0.3);
+  border:1px solid rgba(255,255,255,0.06);
 }
 .photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
 .photo-frame::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 55%,rgba(13,27,46,0.6) 100%);
+  background:linear-gradient(180deg,transparent 50%,rgba(15,17,23,0.55) 100%);
 }
-/* amber corner accent */
 .photo-accent{
-  position:absolute;top:-10px;right:-10px;
-  width:80px;height:80px;
-  border-top:2px solid var(--amber);
-  border-right:2px solid var(--amber);
-  border-radius:0 8px 0 0;
-  opacity:0.5;pointer-events:none;
+  position:absolute;top:-8px;right:-8px;
+  width:70px;height:70px;
+  border-top:2px solid var(--blue);
+  border-right:2px solid var(--blue);
+  border-radius:0 10px 0 0;
+  opacity:0.4;pointer-events:none;
 }
 .photo-accent2{
-  position:absolute;bottom:-10px;left:-10px;
-  width:60px;height:60px;
-  border-bottom:2px solid var(--amber);
-  border-left:2px solid var(--amber);
-  border-radius:0 0 0 8px;
-  opacity:0.35;pointer-events:none;
+  position:absolute;bottom:-8px;left:-8px;
+  width:50px;height:50px;
+  border-bottom:2px solid var(--blue);
+  border-left:2px solid var(--blue);
+  border-radius:0 0 0 10px;
+  opacity:0.3;pointer-events:none;
 }
 .float-badge{
-  position:absolute;bottom:20px;left:-20px;z-index:2;
-  background:var(--navy-mid);
-  border:1px solid rgba(240,165,0,0.3);
-  border-radius:8px;padding:12px 18px;
-  box-shadow:0 8px 32px rgba(0,0,0,0.4);
-  display:flex;align-items:center;gap:12px;
+  position:absolute;bottom:18px;left:-18px;z-index:2;
+  background:var(--surface);
+  border:1px solid rgba(59,130,246,0.25);
+  border-radius:8px;padding:10px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.45);
+  display:flex;align-items:center;gap:10px;
 }
-.fb-icon{font-size:20px}
-.fb-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--gray);text-transform:uppercase;letter-spacing:0.1em}
-.fb-val{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--amber)}
+.fb-icon{font-size:18px}
+.fb-lbl{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em}
+.fb-val{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--blue2)}
 
 /* ── SECTIONS ── */
-.sec{padding:80px 48px;position:relative;z-index:1}
+.sec{padding:80px 52px;position:relative;z-index:1}
 .sec-inner{max-width:1160px;margin:0 auto}
 .sec-eye{
-  font-family:'DM Mono',monospace;font-size:10.5px;color:var(--amber);
+  font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);
   letter-spacing:0.22em;text-transform:uppercase;
   margin-bottom:10px;display:flex;align-items:center;gap:10px;
 }
-.sec-eye::before{content:'';width:20px;height:1.5px;background:var(--amber)}
+.sec-eye::before{content:'';width:18px;height:1.5px;background:var(--blue)}
 .sec-title{
-  font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,42px);
-  font-weight:800;letter-spacing:-1px;color:var(--white);
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,4vw,40px);
+  font-weight:800;letter-spacing:-0.8px;color:var(--white);
   margin-bottom:44px;line-height:1.05;
 }
 
 /* ── SKILLS ── */
-#skills{background:var(--navy-deep)}
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.04)}
+#skills{background:var(--bg2)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.03)}
 .sk-card{
-  background:var(--navy);padding:28px;
+  background:var(--bg3);padding:26px;
   transition:all .3s;cursor:default;
   border:1px solid transparent;
 }
-.sk-card:hover{background:var(--navy-muted);border-color:rgba(240,165,0,0.2)}
-.sk-icon{font-size:24px;margin-bottom:14px}
-.sk-name{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--amber);margin-bottom:12px;letter-spacing:0.02em}
-.sk-tags{display:flex;flex-wrap:wrap;gap:6px}
+.sk-card:hover{background:var(--surface);border-color:rgba(59,130,246,0.18)}
+.sk-icon{font-size:22px;margin-bottom:12px}
+.sk-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12.5px;color:var(--blue2);margin-bottom:12px;letter-spacing:0.02em}
+.sk-tags{display:flex;flex-wrap:wrap;gap:5px}
 .sk-tag{
-  font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray);
-  border:1px solid rgba(255,255,255,0.1);
-  padding:3px 10px;border-radius:3px;transition:all .2s;
+  font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:3px 9px;border-radius:3px;transition:all .2s;
 }
-.sk-card:hover .sk-tag{border-color:rgba(240,165,0,0.25);color:var(--off-white)}
+.sk-card:hover .sk-tag{border-color:rgba(59,130,246,0.22);color:var(--off-white)}
 
 /* ── PROJECTS ── */
-#projects{background:var(--navy-mid)}
-.proj-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.2)}
+#projects{background:var(--bg3)}
+.proj-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.15)}
 
-/* featured */
 .proj-feat{
-  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy-muted) 100%);
-  padding:44px;border-left:3px solid var(--amber);
+  background:linear-gradient(135deg,var(--bg2) 0%,var(--surface) 100%);
+  padding:42px;border-left:3px solid var(--blue);
   transition:all .3s;
 }
-.proj-feat:hover{background:linear-gradient(135deg,var(--navy-muted) 0%,var(--navy-light) 100%)}
+.proj-feat:hover{background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%)}
 
-/* regular */
 .proj-card{
-  background:var(--navy);padding:32px;
+  background:var(--bg2);padding:30px;
   display:grid;grid-template-columns:1fr auto;
   gap:24px;align-items:center;
   transition:all .3s;border-left:3px solid transparent;
 }
-.proj-card:hover{background:var(--navy-muted);border-left-color:rgba(240,165,0,0.5)}
+.proj-card:hover{background:var(--surface);border-left-color:rgba(59,130,246,0.5)}
 
-.proj-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.proj-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .proj-badge{
-  font-family:'DM Mono',monospace;font-size:10px;
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;
   padding:3px 10px;border-radius:3px;
   text-transform:uppercase;letter-spacing:0.1em;
 }
-.b-feat{background:rgba(240,165,0,0.12);border:1px solid rgba(240,165,0,0.3);color:var(--amber)}
-.b-live{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);color:#4ade80}
-.b-prod{background:rgba(99,179,237,0.1);border:1px solid rgba(99,179,237,0.25);color:#93c5fd}
-.proj-yr{font-family:'DM Mono',monospace;font-size:10px;color:var(--gray)}
+.b-feat{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);color:var(--blue2)}
+.b-live{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.22);color:#4ade80}
+.b-prod{background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.22);color:#c084fc}
+.proj-yr{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted)}
 
-.proj-title{font-family:'Syne',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.4px;color:var(--white);margin-bottom:10px}
-.proj-feat .proj-title{font-size:28px}
-.proj-desc{font-size:14px;line-height:1.72;color:rgba(232,237,244,0.62);margin-bottom:18px;max-width:640px}
+.proj-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.3px;color:var(--white);margin-bottom:10px}
+.proj-feat .proj-title{font-size:26px}
+.proj-desc{font-size:13.5px;line-height:1.75;color:rgba(226,232,240,0.58);margin-bottom:16px;max-width:640px}
 
-.proj-techs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
-.proj-tech{font-family:'DM Mono',monospace;font-size:10.5px;padding:3px 10px;border-radius:3px;border:1px solid rgba(255,255,255,0.1);color:var(--gray)}
-.proj-feat .proj-tech{border-color:rgba(240,165,0,0.2);color:rgba(240,165,0,0.8)}
+.proj-techs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.proj-tech{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:3px;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
+.proj-feat .proj-tech{border-color:rgba(59,130,246,0.2);color:rgba(59,130,246,0.85)}
 
 .proj-links{display:flex;gap:16px}
-.proj-link{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--amber);display:flex;align-items:center;gap:5px;transition:opacity .2s}
+.proj-link{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blue2);display:flex;align-items:center;gap:5px;transition:opacity .2s}
 .proj-link:hover{opacity:0.65}
-.proj-reg-link{color:var(--amber)}
 
-.proj-arrow{font-size:28px;color:rgba(255,255,255,0.15);transition:all .3s;flex-shrink:0}
-.proj-card:hover .proj-arrow{color:var(--amber);transform:translate(4px,-4px)}
+.proj-arrow{font-size:26px;color:rgba(255,255,255,0.1);transition:all .3s;flex-shrink:0}
+.proj-card:hover .proj-arrow{color:var(--blue);transform:translate(4px,-4px)}
 
 /* ── EXPERIENCE ── */
-#experience{background:var(--navy-deep)}
-.exp-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.15)}
+#experience{background:var(--bg2)}
+.exp-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.12)}
 .exp-card{
-  background:var(--navy);
-  display:grid;grid-template-columns:160px 1fr;
+  background:var(--bg3);
+  display:grid;grid-template-columns:155px 1fr;
   gap:28px;padding:28px 32px;
   transition:all .3s;border-left:3px solid transparent;
 }
-.exp-card:hover{background:var(--navy-muted);border-left-color:var(--amber)}
-.exp-time{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray);line-height:1.9;padding-top:2px}
-.exp-loc{display:block;color:var(--amber);font-size:10px;margin-top:4px}
-.exp-role{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:var(--white);margin-bottom:3px;letter-spacing:-0.2px}
-.exp-co{font-family:'DM Mono',monospace;font-size:11px;color:var(--amber);margin-bottom:12px;opacity:0.8}
+.exp-card:hover{background:var(--surface);border-left-color:var(--blue)}
+.exp-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);line-height:1.9;padding-top:2px}
+.exp-loc{display:block;color:var(--blue2);font-size:9.5px;margin-top:4px}
+.exp-role{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:2px;letter-spacing:-0.2px}
+.exp-co{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--blue2);margin-bottom:12px;opacity:0.8}
 .exp-buls{list-style:none;display:flex;flex-direction:column;gap:5px}
-.exp-buls li{font-size:13px;color:rgba(232,237,244,0.65);line-height:1.65;padding-left:18px;position:relative}
-.exp-buls li::before{content:'→';position:absolute;left:0;color:var(--amber);font-size:11px;top:2px;opacity:0.7}
+.exp-buls li{font-size:13px;color:rgba(226,232,240,0.62);line-height:1.68;padding-left:18px;position:relative}
+.exp-buls li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:10px;top:3px;opacity:0.7}
 
 /* ── CONTACT ── */
 #contact{
-  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy-muted) 100%);
-  padding:80px 48px;
-  border-top:1px solid rgba(240,165,0,0.15);
+  background:linear-gradient(135deg,var(--bg) 0%,var(--bg3) 100%);
+  padding:80px 52px;
+  border-top:1px solid rgba(59,130,246,0.12);
   position:relative;z-index:1;
 }
 .contact-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.ct-head{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,4.5vw,56px);letter-spacing:-1.5px;color:var(--white);line-height:1.02;margin-bottom:18px}
-.ct-head em{color:var(--amber);font-style:normal}
-.ct-sub{font-size:15px;color:rgba(232,237,244,0.48);line-height:1.72}
+.ct-head{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);letter-spacing:-1.2px;color:var(--white);line-height:1.02;margin-bottom:16px}
+.ct-head em{color:var(--blue);font-style:normal}
+.ct-sub{font-size:14.5px;color:rgba(226,232,240,0.45);line-height:1.75}
 .ct-cards{display:flex;flex-direction:column;gap:10px}
 .ct-card{
   display:flex;align-items:center;gap:14px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:6px;padding:16px 20px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:6px;padding:15px 20px;
   color:var(--white);transition:all .3s;
 }
-.ct-card:hover{background:rgba(240,165,0,0.08);border-color:rgba(240,165,0,0.3);transform:translateX(6px)}
-.ct-icon{width:40px;height:40px;background:rgba(240,165,0,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;border:1px solid rgba(240,165,0,0.2)}
-.ct-lbl{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--gray);text-transform:uppercase;letter-spacing:0.1em}
-.ct-val{font-size:13.5px;font-weight:500;margin-top:2px}
+.ct-card:hover{background:rgba(59,130,246,0.07);border-color:rgba(59,130,246,0.28);transform:translateX(5px)}
+.ct-icon{width:38px;height:38px;background:rgba(59,130,246,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:1px solid rgba(59,130,246,0.18)}
+.ct-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em}
+.ct-val{font-size:13px;font-weight:500;margin-top:2px}
 
 /* ── FOOTER ── */
 footer{
-  background:var(--navy-deep);border-top:1px solid rgba(255,255,255,0.05);
-  padding:20px 48px;display:flex;justify-content:space-between;align-items:center;
+  background:var(--bg);border-top:1px solid rgba(255,255,255,0.04);
+  padding:20px 52px;display:flex;justify-content:space-between;align-items:center;
   position:relative;z-index:1;
 }
-footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
+footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)}
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-.fu{animation:fadeUp .7s ease forwards}
-.d0{animation-delay:.00s;opacity:0}.d1{animation-delay:.12s;opacity:0}.d2{animation-delay:.22s;opacity:0}
-.d3{animation-delay:.34s;opacity:0}.d4{animation-delay:.46s;opacity:0}
-.d5{animation-delay:.58s;opacity:0}.d6{animation-delay:.70s;opacity:0}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp .65s ease forwards}
+.d0{animation-delay:.00s;opacity:0}.d1{animation-delay:.10s;opacity:0}.d2{animation-delay:.20s;opacity:0}
+.d3{animation-delay:.32s;opacity:0}.d4{animation-delay:.44s;opacity:0}
+.d5{animation-delay:.56s;opacity:0}.d6{animation-delay:.68s;opacity:0}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
-  .hero-inner{grid-template-columns:1fr 300px;gap:48px}
+  .hero-inner{grid-template-columns:1fr 260px;gap:48px}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
@@ -359,31 +364,30 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
   .hamburger{display:flex}
   #hero{padding:80px 20px 56px;align-items:flex-start;min-height:auto}
   .hero-inner{grid-template-columns:1fr;gap:0}
-  .photo-col{order:-1;margin:0 auto 32px;width:180px}
+  .photo-col{order:-1;margin:0 auto 32px;width:160px}
   .photo-frame{aspect-ratio:1/1;border-radius:50%}
   .photo-frame::after{display:none}
   .photo-accent,.photo-accent2,.float-badge{display:none}
-  .hero-name{font-size:clamp(40px,11vw,60px)}
-  .hero-name .cursive{font-size:clamp(50px,13vw,76px)}
+  .hero-name{font-size:clamp(38px,11vw,58px)}
   .stats-row{gap:20px;flex-wrap:wrap}
   .sec{padding:56px 20px}
   .sec-title{margin-bottom:28px}
   .skills-grid{grid-template-columns:repeat(2,1fr);gap:1px}
   .sk-card{padding:20px}
-  .proj-feat{padding:24px;border-left-width:3px}
-  .proj-card{grid-template-columns:1fr;padding:24px;gap:16px}
+  .proj-feat{padding:24px}
+  .proj-card{grid-template-columns:1fr;padding:22px;gap:14px}
   .proj-arrow{display:none}
-  .proj-feat .proj-title{font-size:22px}
-  .exp-card{grid-template-columns:1fr;gap:10px;padding:22px 20px}
+  .proj-feat .proj-title{font-size:20px}
+  .exp-card{grid-template-columns:1fr;gap:8px;padding:20px}
   #contact{padding:60px 20px}
   .contact-inner{grid-template-columns:1fr;gap:36px}
   footer{padding:18px 20px;flex-direction:column;gap:6px;text-align:center}
 }
 @media(max-width:480px){
   .skills-grid{grid-template-columns:1fr}
-  .hero-desc{font-size:14.5px}
+  .hero-desc{font-size:14px}
   .cta-row{flex-direction:column;gap:10px}
-  .btn-amber,.btn-ghost{justify-content:center;padding:13px 20px}
+  .btn-blue,.btn-ghost,.btn-cv{justify-content:center;padding:12px 20px}
   .stats-row{gap:16px}
 }
 </style>
@@ -391,7 +395,7 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">AM<b>.</b></a>
+  <a href="#hero" class="nav-logo">Ashik<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -418,23 +422,21 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div>
-      <div class="avail fu d0"><span class="avail-dot"></span>Available for work</div>
-      <h1 class="hero-name fu d1">
-        Ashik
-        <span class="cursive">Mahbub</span>
-      </h1>
-      <p class="hero-role fu d2">Full Stack Developer · Backend Engineer · DevOps</p>
-      <p class="hero-desc fu d3">Building scalable backend systems, deploying production infrastructure, and crafting modern web applications. 2+ years of real-world experience across Django, Next.js, Docker, and cloud platforms.</p>
+      <div class="avail fu d0"><span class="avail-dot"></span>Available for remote work</div>
+      <h1 class="hero-name fu d1">Ashik <span class="accent">Mahbub</span></h1>
+      <p class="hero-role fu d2">Full Stack Developer · Systems Administrator · Backend Engineer</p>
+      <p class="hero-desc fu d3">2+ years delivering production systems for a US-based client. Built a custom Authorize.net payment gateway, a bidirectional LDAP–WordPress sync plugin, and an AI-driven social media posting API — all live in production. Full stack from Django APIs and Next.js to Docker, Nginx, and Linux server management.</p>
       <div class="cta-row fu d4">
-        <a href="#projects" class="btn-amber">View Projects →</a>
+        <a href="#projects" class="btn-blue">View Projects →</a>
+        <a href="/resume.pdf" download class="btn-cv">↓ Download CV</a>
         <a href="https://github.com/Ashikmahbub" target="_blank" class="btn-ghost">GitHub ↗</a>
         <a href="https://linkedin.com/in/ashik-mahbub-a691231b1" target="_blank" class="btn-ghost">LinkedIn ↗</a>
       </div>
       <div class="stats-row fu d5">
         <div><div class="stat-n">2+</div><div class="stat-l">Years Exp</div></div>
-        <div><div class="stat-n">10+</div><div class="stat-l">Projects</div></div>
+        <div><div class="stat-n">4</div><div class="stat-l">Live Projects</div></div>
         <div><div class="stat-n">3</div><div class="stat-l">Live Servers</div></div>
-        <div><div class="stat-n">5+</div><div class="stat-l">Stacks</div></div>
+        <div><div class="stat-n">99.9%</div><div class="stat-l">Uptime</div></div>
       </div>
     </div>
     <div class="photo-col fu d2">
@@ -457,12 +459,69 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
     <div class="sec-eye">What I know</div>
     <h2 class="sec-title">Skills & Technologies</h2>
     <div class="skills-grid">
-      <div class="sk-card"><div class="sk-icon">⚙️</div><div class="sk-name">Backend</div><div class="sk-tags"><span class="sk-tag">Django</span><span class="sk-tag">DRF</span><span class="sk-tag">FastAPI</span><span class="sk-tag">Node.js</span><span class="sk-tag">Express.js</span><span class="sk-tag">JWT</span><span class="sk-tag">Celery</span></div></div>
-      <div class="sk-card"><div class="sk-icon">🎨</div><div class="sk-name">Frontend</div><div class="sk-tags"><span class="sk-tag">Next.js</span><span class="sk-tag">React</span><span class="sk-tag">TypeScript</span><span class="sk-tag">Tailwind</span><span class="sk-tag">Bootstrap</span><span class="sk-tag">HTML/CSS</span></div></div>
-      <div class="sk-card"><div class="sk-icon">🗄️</div><div class="sk-name">Database & Cache</div><div class="sk-tags"><span class="sk-tag">PostgreSQL</span><span class="sk-tag">MySQL</span><span class="sk-tag">MongoDB</span><span class="sk-tag">Redis</span></div></div>
-      <div class="sk-card"><div class="sk-icon">🚀</div><div class="sk-name">DevOps & Cloud</div><div class="sk-tags"><span class="sk-tag">Docker</span><span class="sk-tag">GitHub Actions</span><span class="sk-tag">Nginx</span><span class="sk-tag">Linux</span><span class="sk-tag">AWS</span><span class="sk-tag">Kamatera</span></div></div>
-      <div class="sk-card"><div class="sk-icon">💻</div><div class="sk-name">Languages</div><div class="sk-tags"><span class="sk-tag">Python</span><span class="sk-tag">JavaScript</span><span class="sk-tag">TypeScript</span><span class="sk-tag">PHP</span><span class="sk-tag">C / C++</span></div></div>
-      <div class="sk-card"><div class="sk-icon">🛠️</div><div class="sk-name">Tools & Other</div><div class="sk-tags"><span class="sk-tag">Git</span><span class="sk-tag">WordPress</span><span class="sk-tag">Odoo</span><span class="sk-tag">LDAP</span><span class="sk-tag">Groq AI</span><span class="sk-tag">OpenAI</span></div></div>
+      <div class="sk-card">
+        <div class="sk-icon">⚙️</div>
+        <div class="sk-name">Backend</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Python</span><span class="sk-tag">Django</span><span class="sk-tag">DRF</span>
+          <span class="sk-tag">Node.js</span><span class="sk-tag">Celery</span><span class="sk-tag">JWT</span>
+          <span class="sk-tag">REST APIs</span><span class="sk-tag">Shell Script</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🎨</div>
+        <div class="sk-name">Frontend</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Next.js</span><span class="sk-tag">React</span>
+          <span class="sk-tag">TypeScript</span><span class="sk-tag">JavaScript</span>
+          <span class="sk-tag">Tailwind CSS</span><span class="sk-tag">WordPress (PHP)</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🗄️</div>
+        <div class="sk-name">Database & Cache</div>
+        <div class="sk-tags">
+          <span class="sk-tag">PostgreSQL</span><span class="sk-tag">MySQL</span>
+          <span class="sk-tag">MongoDB</span><span class="sk-tag">Redis</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🐧</div>
+        <div class="sk-name">Linux & SysAdmin</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Server Provisioning</span><span class="sk-tag">Monitoring</span>
+          <span class="sk-tag">Patching & Upgrades</span><span class="sk-tag">Nginx</span>
+          <span class="sk-tag">Kamatera</span><span class="sk-tag">AWS</span>
+          <span class="sk-tag">Automated Backups</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🚀</div>
+        <div class="sk-name">DevOps & CI/CD</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Docker</span><span class="sk-tag">GitLab CI/CD</span>
+          <span class="sk-tag">GitHub Actions</span><span class="sk-tag">Gunicorn</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🤖</div>
+        <div class="sk-name">AI & Integrations</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Groq AI</span><span class="sk-tag">OpenAI API</span>
+          <span class="sk-tag">Authorize.net SDK</span><span class="sk-tag">Stripe</span>
+          <span class="sk-tag">SSLCommerz</span><span class="sk-tag">LDAP</span>
+          <span class="sk-tag">Odoo</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🛠️</div>
+        <div class="sk-name">Tools</div>
+        <div class="sk-tags">
+          <span class="sk-tag">Git</span><span class="sk-tag">WordPress</span>
+          <span class="sk-tag">pgvector</span><span class="sk-tag">Gunicorn</span>
+          <span class="sk-tag">PHP</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -473,33 +532,64 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
     <div class="sec-eye">What I built</div>
     <h2 class="sec-title">Projects</h2>
     <div class="proj-list">
+
+      <!-- Manverse -->
       <div class="proj-feat">
         <div class="proj-meta"><span class="proj-badge b-feat">⭐ Featured</span><span class="proj-yr">2026</span></div>
-        <div class="proj-title">Manverse — E-Commerce Platform</div>
-        <p class="proj-desc">Full-stack e-commerce platform built from scratch. JWT auth, product catalog with filters & search, cart, checkout, order management, AI chatbot powered by Groq, and fully automated CI/CD on VPS with GitHub Actions self-hosted runner.</p>
-        <div class="proj-techs"><span class="proj-tech">Next.js 16</span><span class="proj-tech">Django 6</span><span class="proj-tech">PostgreSQL</span><span class="proj-tech">Redis</span><span class="proj-tech">Celery</span><span class="proj-tech">Docker</span><span class="proj-tech">GitHub Actions</span><span class="proj-tech">Nginx</span><span class="proj-tech">Groq AI</span></div>
-        <div class="proj-links"><a href="http://103.102.46.200" target="_blank" class="proj-link">Live Demo ↗</a><a href="https://github.com/Ashikmahbub/manverse" target="_blank" class="proj-link">GitHub ↗</a></div>
+        <div class="proj-title">Manverse — Full-Stack E-Commerce Platform</div>
+        <p class="proj-desc">End-to-end e-commerce platform built from scratch — product catalog, cart, checkout, order management, JWT auth, Stripe and SSLCommerz payment integrations, and AI chatbot powered by Groq. Fully containerized with Docker, self-hosted CI/CD via GitHub Actions on VPS, Nginx reverse proxy.</p>
+        <div class="proj-techs">
+          <span class="proj-tech">Django</span><span class="proj-tech">Next.js</span>
+          <span class="proj-tech">PostgreSQL</span><span class="proj-tech">Redis</span>
+          <span class="proj-tech">Celery</span><span class="proj-tech">Docker</span>
+          <span class="proj-tech">GitHub Actions</span><span class="proj-tech">Nginx</span>
+          <span class="proj-tech">Groq AI</span><span class="proj-tech">Stripe</span>
+          <span class="proj-tech">SSLCommerz</span>
+        </div>
+        <div class="proj-links">
+          <a href="http://103.102.46.200" target="_blank" class="proj-link">Live Demo ↗</a>
+          <a href="https://github.com/Ashikmahbub/manverse" target="_blank" class="proj-link">GitHub ↗</a>
+        </div>
       </div>
+
+      <!-- MND -->
+      <div class="proj-card">
+        <div>
+          <div class="proj-meta"><span class="proj-badge b-prod">Production</span><span class="proj-yr">2023–Present</span></div>
+          <div class="proj-title">My Nature's Delight</div>
+          <p class="proj-desc">Full production system for a US-based e-commerce client. Built custom Authorize.net CIM payment gateway (PHP SDK), a bidirectional LDAP–WordPress user sync plugin with group-based access control, and an AI-driven API that generates and posts content to social media. Also handles Linux server management, Odoo ERP integration, and CI/CD.</p>
+          <div class="proj-techs">
+            <span class="proj-tech">PHP</span><span class="proj-tech">WordPress</span>
+            <span class="proj-tech">LDAP</span><span class="proj-tech">Authorize.net</span>
+            <span class="proj-tech">Odoo</span><span class="proj-tech">Linux</span>
+            <span class="proj-tech">Docker</span><span class="proj-tech">GitLab CI</span>
+            <span class="proj-tech">Groq AI</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://www.mynaturesdelight.com" target="_blank" class="proj-link">Live ↗</a>
+          </div>
+        </div>
+        <div class="proj-arrow">↗</div>
+      </div>
+
+      <!-- Plant Shop -->
       <div class="proj-card">
         <div>
           <div class="proj-meta"><span class="proj-badge b-live">Live</span><span class="proj-yr">2024</span></div>
           <div class="proj-title">Plant Shop</div>
-          <p class="proj-desc">Full-stack e-commerce app for plant products with browsing, cart, and checkout. Deployed on Vercel.</p>
-          <div class="proj-techs"><span class="proj-tech">React</span><span class="proj-tech">Node.js</span><span class="proj-tech">MongoDB</span></div>
-          <div class="proj-links"><a href="https://plants-shop-client.vercel.app/" target="_blank" class="proj-link proj-reg-link">Live ↗</a></div>
+          <p class="proj-desc">Full-stack MERN e-commerce app — product browsing, cart, checkout with Stripe and SSLCommerz payment integration. Deployed on Vercel.</p>
+          <div class="proj-techs">
+            <span class="proj-tech">React</span><span class="proj-tech">Node.js</span>
+            <span class="proj-tech">MongoDB</span><span class="proj-tech">Stripe</span>
+            <span class="proj-tech">SSLCommerz</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://plants-shop-client.vercel.app/" target="_blank" class="proj-link">Live ↗</a>
+          </div>
         </div>
         <div class="proj-arrow">↗</div>
       </div>
-      <div class="proj-card">
-        <div>
-          <div class="proj-meta"><span class="proj-badge b-prod">Production</span><span class="proj-yr">2023</span></div>
-          <div class="proj-title">My Nature's Delight</div>
-          <p class="proj-desc">Full production system — REST APIs, Linux server management, LDAP, Odoo backend, WordPress plugins, payment integrations.</p>
-          <div class="proj-techs"><span class="proj-tech">PHP</span><span class="proj-tech">WordPress</span><span class="proj-tech">Odoo</span><span class="proj-tech">LDAP</span><span class="proj-tech">Linux</span><span class="proj-tech">AWS</span></div>
-          <div class="proj-links"><a href="https://www.mynaturesdelight.com" target="_blank" class="proj-link proj-reg-link">Live ↗</a></div>
-        </div>
-        <div class="proj-arrow">↗</div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -510,40 +600,33 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
     <div class="sec-eye">Where I worked</div>
     <h2 class="sec-title">Experience</h2>
     <div class="exp-list">
+
       <div class="exp-card">
         <div class="exp-time">Jun 2023 – Present<span class="exp-loc">Florida, USA · Remote</span></div>
         <div>
-          <div class="exp-role">Full-Stack Developer & Sys Admin</div>
-          <div class="exp-co">My Nature's Delight</div>
+          <div class="exp-role">Full Stack Developer & Sys Admin</div>
+          <div class="exp-co">My Nature's Delight (Client)</div>
           <ul class="exp-buls">
-            <li>Manage production servers — deployment, monitoring, upgrades, automated backups</li>
-            <li>Build REST APIs with Django and Node.js; Redis caching, Celery background jobs</li>
-            <li>JWT & LDAP auth, Docker containerization, CI/CD via GitHub Actions</li>
-            <li>Deploy and manage cloud servers on AWS and Kamatera — 99.9% uptime</li>
-            <li>WordPress plugin development, Odoo integrations, payment gateway solutions</li>
+            <li>Implemented Authorize.net CIM payment gateway using official PHP SDK — customer profiles, recurring billing, live transactions</li>
+            <li>Built bidirectional LDAP–WordPress sync plugin with group-based WordPress role mapping</li>
+            <li>Developed AI-driven API for automated social media content generation and posting</li>
+            <li>Built custom WordPress plugins and Odoo ERP integrations; PHP and JavaScript frontend</li>
+            <li>Spin up, monitor, patch, and upgrade Linux production servers on Kamatera — Docker, Nginx, GitLab CI/CD, automated backups, 99.9% uptime</li>
           </ul>
         </div>
       </div>
-      <div class="exp-card">
-        <div class="exp-time">Aug 2025<span class="exp-loc">USA · Remote</span></div>
-        <div>
-          <div class="exp-role">Backend Developer</div>
-          <div class="exp-co">Globalclouddata LSE</div>
-          <ul class="exp-buls">
-            <li>REST API development and infrastructure management</li>
-            <li>Linux server administration and deployment pipeline maintenance</li>
-            <li>Maintained reliable production environments with focus on uptime</li>
-          </ul>
-        </div>
-      </div>
+
       <div class="exp-card">
         <div class="exp-time">Graduated<span class="exp-loc">CGPA: 3.71</span></div>
         <div>
           <div class="exp-role">B.Sc. Electrical & Electronics Eng.</div>
           <div class="exp-co">Daffodil International University · Dhaka</div>
-          <ul class="exp-buls"><li>Strong foundation in engineering, systems design, and applied programming</li></ul>
+          <ul class="exp-buls">
+            <li>Strong foundation in engineering, systems design, and applied programming</li>
+          </ul>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -556,10 +639,22 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
       <p class="ct-sub">Open to full-time roles, freelance projects, and remote opportunities worldwide. Let's build something great.</p>
     </div>
     <div class="ct-cards">
-      <div class="ct-card" onclick="openEmail()" style="cursor:pointer"><div class="ct-icon">✉️</div><div><div class="ct-lbl">Email</div><div class="ct-val" id="email-display">ashikmahbub56 @ gmail.com</div></div></div>
-      <a href="https://github.com/Ashikmahbub" target="_blank" class="ct-card"><div class="ct-icon">🐙</div><div><div class="ct-lbl">GitHub</div><div class="ct-val">github.com/Ashikmahbub</div></div></a>
-      <a href="https://linkedin.com/in/ashik-mahbub-a691231b1" target="_blank" class="ct-card"><div class="ct-icon">💼</div><div><div class="ct-lbl">LinkedIn</div><div class="ct-val">Ashik Mahbub</div></div></a>
-      <a href="https://wa.me/8801793703156" target="_blank" class="ct-card"><div class="ct-icon">💬</div><div><div class="ct-lbl">WhatsApp</div><div class="ct-val">+880 1793 703156</div></div></a>
+      <div class="ct-card" onclick="openEmail()" style="cursor:pointer">
+        <div class="ct-icon">✉️</div>
+        <div><div class="ct-lbl">Email</div><div class="ct-val" id="email-display">ashikmahbub56@gmail.com</div></div>
+      </div>
+      <a href="https://github.com/Ashikmahbub" target="_blank" class="ct-card">
+        <div class="ct-icon">🐙</div>
+        <div><div class="ct-lbl">GitHub</div><div class="ct-val">github.com/Ashikmahbub</div></div>
+      </a>
+      <a href="https://linkedin.com/in/ashik-mahbub-a691231b1" target="_blank" class="ct-card">
+        <div class="ct-icon">💼</div>
+        <div><div class="ct-lbl">LinkedIn</div><div class="ct-val">linkedin.com/in/ashik-mahbub-a691231b1</div></div>
+      </a>
+      <a href="https://wa.me/8801793703156" target="_blank" class="ct-card">
+        <div class="ct-icon">💬</div>
+        <div><div class="ct-lbl">WhatsApp</div><div class="ct-val">+880 1793 703156</div></div>
+      </a>
     </div>
   </div>
 </section>
@@ -570,10 +665,8 @@ footer p{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--gray)}
 </footer>
 
 <script>
-// build email at runtime so Cloudflare can't intercept it
-function getEmail(){ return ['ashikmahbub56','gmail','com'].join('@').replace('@gmail','@gmail'); }
-function openEmail(e){ if(e)e.preventDefault(); window.location='mai'+'lto:'+getEmail(); }
-// show real email in contact card after page loads
+function getEmail(){ return 'ashikmahbub56@gmail.com'; }
+function openEmail(e){ if(e)e.preventDefault(); window.location='mailto:'+getEmail(); }
 document.addEventListener('DOMContentLoaded',function(){
   var el=document.getElementById('email-display');
   if(el) el.textContent=getEmail();
@@ -589,4 +682,12 @@ function toggleMenu(){
 }
 function closeMenu(){
   open=false;
-  document.getElementB
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow='';
+  document.getElementById('hb1').style.transform='';
+  document.getElementById('hb2').style.opacity='1';
+  document.getElementById('hb3').style.transform='';
+}
+</script>
+</body>
+</html>
