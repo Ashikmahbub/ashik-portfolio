@@ -7,26 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --bg:          #0f1117;
-  --bg2:         #151820;
-  --bg3:         #1c2130;
-  --surface:     #1e2535;
-  --surface2:    #252d3d;
-  --blue:        #3b82f6;
-  --blue2:       #60a5fa;
-  --blue-dim:    #2563eb;
-  --blue-glow:   rgba(59,130,246,0.12);
-  --blue-pale:   rgba(59,130,246,0.06);
-  --slate:       #64748b;
-  --slate2:      #94a3b8;
+  --bg:          #13151f;
+  --bg2:         #191c28;
+  --bg3:         #1f2335;
+  --surface:     #242840;
+  --surface2:    #2c3050;
+  --blue:        #4f8ef7;
+  --blue2:       #7eb3ff;
+  --blue-dim:    #3a6fd8;
+  --blue-glow:   rgba(79,142,247,0.14);
   --white:       #ffffff;
-  --off-white:   #e2e8f0;
-  --muted:       #8892a4;
-  --border:      rgba(255,255,255,0.06);
-  --border2:     rgba(59,130,246,0.2);
-  --shadow:      0 4px 20px rgba(0,0,0,0.4);
-  --shadow-lg:   0 24px 60px rgba(0,0,0,0.5);
-  --shadow-blue: 0 8px 32px rgba(59,130,246,0.25);
+  --off-white:   #dde4f0;
+  --muted:       #8c96b0;
+  --border:      rgba(255,255,255,0.07);
+  --border2:     rgba(79,142,247,0.22);
+  --shadow-blue: 0 8px 32px rgba(79,142,247,0.28);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
@@ -34,13 +29,12 @@ body{background:var(--bg);color:var(--off-white);font-family:'Plus Jakarta Sans'
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 
-/* subtle grid texture */
 body::before{
   content:'';position:fixed;inset:0;
   background-image:
-    linear-gradient(rgba(59,130,246,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(59,130,246,0.03) 1px,transparent 1px);
-  background-size:48px 48px;
+    linear-gradient(rgba(79,142,247,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(79,142,247,0.025) 1px,transparent 1px);
+  background-size:52px 52px;
   pointer-events:none;z-index:0;
 }
 
@@ -49,170 +43,97 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;justify-content:space-between;align-items:center;
   padding:0 52px;height:62px;
-  background:rgba(15,17,23,0.94);
+  background:rgba(19,21,31,0.95);
   backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border-bottom:1px solid var(--border);
 }
-.nav-logo{
-  font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;
-  font-size:17px;letter-spacing:-0.3px;color:var(--white);
-  display:flex;align-items:center;gap:2px;
-}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.3px;color:var(--white);display:flex;align-items:center;gap:2px}
 .nav-logo span{color:var(--blue)}
 .nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{
-  font-family:'JetBrains Mono',monospace;font-size:10px;
-  color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;transition:color .2s;
-}
-.nav-links a:hover{color:var(--blue2)}
+.nav-links a{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0.01em;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
 .nav-cta{
-  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;
   background:var(--blue);color:var(--white);
-  padding:8px 20px;border-radius:5px;
-  transition:all .25s;white-space:nowrap;font-weight:500;
+  padding:8px 22px;border-radius:6px;
+  transition:all .25s;white-space:nowrap;letter-spacing:0.01em;
 }
 .nav-cta:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:var(--shadow-blue)}
 
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
 .hamburger span{display:block;width:22px;height:2px;background:var(--off-white);border-radius:2px;transition:all .3s}
-.mobile-menu{
-  display:none;position:fixed;top:62px;left:0;right:0;bottom:0;z-index:199;
-  background:rgba(15,17,23,0.98);backdrop-filter:blur(20px);
-  flex-direction:column;align-items:center;justify-content:center;gap:32px;
-}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;bottom:0;z-index:199;background:rgba(19,21,31,0.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:32px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:700;color:var(--white);transition:color .2s}
 .mobile-menu a:hover{color:var(--blue)}
-.mobile-menu .m-cta{font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--blue);color:var(--white);padding:14px 40px;border-radius:5px;margin-top:8px}
+.mobile-menu .m-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;background:var(--blue);color:var(--white);padding:14px 40px;border-radius:6px;margin-top:8px}
 
 /* ── HERO ── */
-#hero{
-  min-height:100svh;display:flex;align-items:center;
-  padding:88px 52px 60px;position:relative;overflow:hidden;
-}
+#hero{min-height:100svh;display:flex;align-items:center;padding:88px 52px 60px;position:relative;overflow:hidden}
 .hero-bg{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 55% 55% at 75% 15%, rgba(37,65,130,0.35) 0%,transparent 65%),
-    radial-gradient(ellipse 35% 45% at 5% 85%, rgba(59,130,246,0.08) 0%,transparent 60%),
+    radial-gradient(ellipse 55% 55% at 75% 15%, rgba(50,80,160,0.28) 0%,transparent 65%),
+    radial-gradient(ellipse 35% 45% at 5% 85%, rgba(79,142,247,0.06) 0%,transparent 60%),
     linear-gradient(160deg, var(--bg) 0%, var(--bg2) 55%, var(--bg3) 100%);
   pointer-events:none;
 }
-.hero-glow{
-  position:absolute;top:-80px;right:-80px;
-  width:480px;height:480px;
-  background:radial-gradient(circle,rgba(59,130,246,0.07) 0%,transparent 65%);
-  pointer-events:none;
-}
-.hero-inner{
-  max-width:1160px;margin:0 auto;width:100%;
-  display:grid;grid-template-columns:1fr 300px;
-  gap:72px;align-items:center;
-  position:relative;z-index:1;
-}
+.hero-glow{position:absolute;top:-80px;right:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(79,142,247,0.06) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 300px;gap:72px;align-items:center;position:relative;z-index:1}
 
-/* availability pill */
-.avail{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--blue2);
-  letter-spacing:0.12em;text-transform:uppercase;
-  background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.22);
-  padding:6px 14px;border-radius:4px;margin-bottom:26px;width:fit-content;
-}
+.avail{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--blue2);letter-spacing:0.12em;text-transform:uppercase;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.22);padding:6px 14px;border-radius:4px;margin-bottom:26px;width:fit-content}
 .avail-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2.4s ease infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
 
-/* name */
-.hero-name{
-  font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;
-  font-size:clamp(42px,6vw,80px);
-  line-height:1;letter-spacing:-2px;
-  color:var(--white);margin-bottom:4px;
-}
+.hero-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(42px,6vw,80px);line-height:1;letter-spacing:-2px;color:var(--white);margin-bottom:4px}
 .hero-name .accent{color:var(--blue)}
 
-.hero-role{
-  font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);
-  letter-spacing:0.05em;margin:20px 0 18px;
-  display:flex;align-items:center;gap:10px;
-}
+.hero-role{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:0.05em;margin:20px 0 18px;display:flex;align-items:center;gap:10px}
 .hero-role::before{content:'';width:24px;height:1px;background:var(--blue);flex-shrink:0}
 
-.hero-desc{
-  font-size:15px;line-height:1.82;
-  color:rgba(226,232,240,0.68);
-  max-width:500px;margin-bottom:36px;
-  font-weight:400;
-}
+.hero-desc{font-size:15px;line-height:1.82;color:rgba(221,228,240,0.72);max-width:500px;margin-bottom:36px;font-weight:400}
 
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+
 .btn-blue{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--blue);color:var(--white);
-  padding:12px 26px;border-radius:5px;
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;
-  font-weight:500;transition:all .25s;
+  padding:12px 28px;border-radius:7px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:0.01em;transition:all .25s;
 }
 .btn-blue:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:var(--shadow-blue)}
+
 .btn-ghost{
   display:inline-flex;align-items:center;gap:8px;
-  border:1px solid rgba(255,255,255,0.14);color:var(--off-white);
-  padding:11px 22px;border-radius:5px;
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;
+  border:1.5px solid rgba(255,255,255,0.18);color:var(--off-white);
+  padding:11px 22px;border-radius:7px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;
   transition:all .25s;
 }
 .btn-ghost:hover{border-color:var(--blue);color:var(--blue2);transform:translateY(-2px)}
+
 .btn-cv{
   display:inline-flex;align-items:center;gap:8px;
-  border:1px solid rgba(59,130,246,0.35);color:var(--blue2);
-  padding:11px 22px;border-radius:5px;
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;
-  transition:all .25s;background:rgba(59,130,246,0.06);
+  border:1.5px solid rgba(79,142,247,0.4);color:var(--blue2);
+  padding:11px 22px;border-radius:7px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:500;
+  transition:all .25s;background:rgba(79,142,247,0.07);
 }
-.btn-cv:hover{border-color:var(--blue);background:rgba(59,130,246,0.12);transform:translateY(-2px)}
+.btn-cv:hover{border-color:var(--blue);background:rgba(79,142,247,0.14);transform:translateY(-2px)}
 
-/* stats */
 .stats-row{display:flex;gap:36px;padding-top:28px;border-top:1px solid var(--border)}
 .stat-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;color:var(--blue);line-height:1}
 .stat-l{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
 
 /* photo */
 .photo-col{position:relative}
-.photo-frame{
-  position:relative;border-radius:10px;overflow:hidden;
-  aspect-ratio:3/4;
-  box-shadow:0 32px 80px rgba(0,0,0,0.6),0 8px 20px rgba(0,0,0,0.3);
-  border:1px solid rgba(255,255,255,0.06);
-}
+.photo-frame{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 32px 80px rgba(0,0,0,0.5),0 8px 20px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.06)}
 .photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.photo-frame::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 50%,rgba(15,17,23,0.55) 100%);
-}
-.photo-accent{
-  position:absolute;top:-8px;right:-8px;
-  width:70px;height:70px;
-  border-top:2px solid var(--blue);
-  border-right:2px solid var(--blue);
-  border-radius:0 10px 0 0;
-  opacity:0.4;pointer-events:none;
-}
-.photo-accent2{
-  position:absolute;bottom:-8px;left:-8px;
-  width:50px;height:50px;
-  border-bottom:2px solid var(--blue);
-  border-left:2px solid var(--blue);
-  border-radius:0 0 0 10px;
-  opacity:0.3;pointer-events:none;
-}
-.float-badge{
-  position:absolute;bottom:18px;left:-18px;z-index:2;
-  background:var(--surface);
-  border:1px solid rgba(59,130,246,0.25);
-  border-radius:8px;padding:10px 16px;
-  box-shadow:0 8px 32px rgba(0,0,0,0.45);
-  display:flex;align-items:center;gap:10px;
-}
+.photo-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(19,21,31,0.5) 100%)}
+.photo-accent{position:absolute;top:-8px;right:-8px;width:70px;height:70px;border-top:2px solid var(--blue);border-right:2px solid var(--blue);border-radius:0 10px 0 0;opacity:0.4;pointer-events:none}
+.photo-accent2{position:absolute;bottom:-8px;left:-8px;width:50px;height:50px;border-bottom:2px solid var(--blue);border-left:2px solid var(--blue);border-radius:0 0 0 10px;opacity:0.3;pointer-events:none}
+.float-badge{position:absolute;bottom:18px;left:-18px;z-index:2;background:var(--surface);border:1px solid rgba(79,142,247,0.25);border-radius:8px;padding:10px 16px;box-shadow:0 8px 32px rgba(0,0,0,0.4);display:flex;align-items:center;gap:10px}
 .fb-icon{font-size:18px}
 .fb-lbl{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em}
 .fb-val{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--blue2)}
@@ -220,130 +141,89 @@ nav{
 /* ── SECTIONS ── */
 .sec{padding:80px 52px;position:relative;z-index:1}
 .sec-inner{max-width:1160px;margin:0 auto}
-.sec-eye{
-  font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);
-  letter-spacing:0.22em;text-transform:uppercase;
-  margin-bottom:10px;display:flex;align-items:center;gap:10px;
-}
+.sec-eye{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .sec-eye::before{content:'';width:18px;height:1.5px;background:var(--blue)}
-.sec-title{
-  font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,4vw,40px);
-  font-weight:800;letter-spacing:-0.8px;color:var(--white);
-  margin-bottom:44px;line-height:1.05;
-}
+.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-0.8px;color:var(--white);margin-bottom:44px;line-height:1.05}
 
 /* ── SKILLS ── */
 #skills{background:var(--bg2)}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.03)}
-.sk-card{
-  background:var(--surface);padding:26px;
-  transition:all .3s;cursor:default;
-  border:1px solid rgba(255,255,255,0.07);
-}
-.sk-card:hover{background:var(--surface2);border-color:rgba(59,130,246,0.25)}
+.sk-card{background:var(--surface);padding:28px;transition:all .3s;cursor:default;border:1px solid rgba(255,255,255,0.06)}
+.sk-card:hover{background:var(--surface2);border-color:rgba(79,142,247,0.3)}
 .sk-icon{font-size:22px;margin-bottom:12px}
-.sk-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12.5px;color:var(--blue2);margin-bottom:12px;letter-spacing:0.02em}
-.sk-tags{display:flex;flex-wrap:wrap;gap:5px}
+.sk-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--blue2);margin-bottom:14px;letter-spacing:0.01em}
+.sk-tags{display:flex;flex-wrap:wrap;gap:6px}
 .sk-tag{
-  font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--off-white);
-  border:1px solid rgba(255,255,255,0.18);
-  padding:4px 10px;border-radius:3px;transition:all .2s;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;font-weight:500;
+  color:var(--off-white);
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.04);
+  padding:4px 11px;border-radius:4px;transition:all .2s;
 }
-.sk-card:hover .sk-tag{border-color:rgba(59,130,246,0.45);color:var(--white);background:rgba(59,130,246,0.08)}
+.sk-card:hover .sk-tag{border-color:rgba(79,142,247,0.4);color:var(--white);background:rgba(79,142,247,0.1)}
 
 /* ── PROJECTS ── */
 #projects{background:var(--bg3)}
-.proj-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.15)}
-
-.proj-feat{
-  background:linear-gradient(135deg,var(--bg2) 0%,var(--surface) 100%);
-  padding:42px;border-left:3px solid var(--blue);
-  transition:all .3s;
-}
+.proj-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.12)}
+.proj-feat{background:linear-gradient(135deg,var(--bg2) 0%,var(--surface) 100%);padding:42px;border-left:3px solid var(--blue);transition:all .3s}
 .proj-feat:hover{background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%)}
-
-.proj-card{
-  background:var(--bg2);padding:30px;
-  display:grid;grid-template-columns:1fr auto;
-  gap:24px;align-items:center;
-  transition:all .3s;border-left:3px solid transparent;
-}
-.proj-card:hover{background:var(--surface);border-left-color:rgba(59,130,246,0.5)}
+.proj-card{background:var(--bg2);padding:30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;transition:all .3s;border-left:3px solid transparent}
+.proj-card:hover{background:var(--surface);border-left-color:rgba(79,142,247,0.5)}
 
 .proj-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.proj-badge{
-  font-family:'JetBrains Mono',monospace;font-size:9.5px;
-  padding:3px 10px;border-radius:3px;
-  text-transform:uppercase;letter-spacing:0.1em;
-}
-.b-feat{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);color:var(--blue2)}
+.proj-badge{font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:3px 10px;border-radius:3px;text-transform:uppercase;letter-spacing:0.1em}
+.b-feat{background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.3);color:var(--blue2)}
 .b-live{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.22);color:#4ade80}
 .b-prod{background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.22);color:#c084fc}
 .proj-yr{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted)}
-
 .proj-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.3px;color:var(--white);margin-bottom:10px}
 .proj-feat .proj-title{font-size:26px}
-.proj-desc{font-size:13.5px;line-height:1.75;color:rgba(226,232,240,0.58);margin-bottom:16px;max-width:640px}
-
+.proj-desc{font-size:13.5px;line-height:1.75;color:rgba(221,228,240,0.62);margin-bottom:16px;max-width:640px}
 .proj-techs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
-.proj-tech{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:3px;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
-.proj-feat .proj-tech{border-color:rgba(59,130,246,0.2);color:rgba(59,130,246,0.85)}
-
+.proj-tech{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:500;
+  padding:3px 10px;border-radius:4px;
+  border:1px solid rgba(255,255,255,0.1);
+  color:rgba(221,228,240,0.75);
+  background:rgba(255,255,255,0.03);
+  transition:all .2s;
+}
+.proj-feat .proj-tech{border-color:rgba(79,142,247,0.25);color:rgba(126,179,255,0.9);background:rgba(79,142,247,0.06)}
+.proj-tech:hover{border-color:rgba(79,142,247,0.45);color:var(--white)}
 .proj-links{display:flex;gap:16px}
-.proj-link{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blue2);display:flex;align-items:center;gap:5px;transition:opacity .2s}
-.proj-link:hover{opacity:0.65}
-
+.proj-link{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:600;color:var(--blue2);display:flex;align-items:center;gap:5px;transition:all .2s}
+.proj-link:hover{color:var(--white)}
 .proj-arrow{font-size:26px;color:rgba(255,255,255,0.1);transition:all .3s;flex-shrink:0}
 .proj-card:hover .proj-arrow{color:var(--blue);transform:translate(4px,-4px)}
 
 /* ── EXPERIENCE ── */
 #experience{background:var(--bg2)}
-.exp-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.12)}
-.exp-card{
-  background:var(--bg3);
-  display:grid;grid-template-columns:155px 1fr;
-  gap:28px;padding:28px 32px;
-  transition:all .3s;border-left:3px solid transparent;
-}
+.exp-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.1)}
+.exp-card{background:var(--bg3);display:grid;grid-template-columns:155px 1fr;gap:28px;padding:28px 32px;transition:all .3s;border-left:3px solid transparent}
 .exp-card:hover{background:var(--surface);border-left-color:var(--blue)}
 .exp-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);line-height:1.9;padding-top:2px}
 .exp-loc{display:block;color:var(--blue2);font-size:9.5px;margin-top:4px}
 .exp-role{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:2px;letter-spacing:-0.2px}
 .exp-co{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--blue2);margin-bottom:12px;opacity:0.8}
 .exp-buls{list-style:none;display:flex;flex-direction:column;gap:5px}
-.exp-buls li{font-size:13px;color:rgba(226,232,240,0.62);line-height:1.68;padding-left:18px;position:relative}
+.exp-buls li{font-size:13px;color:rgba(221,228,240,0.65);line-height:1.68;padding-left:18px;position:relative}
 .exp-buls li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:10px;top:3px;opacity:0.7}
 
 /* ── CONTACT ── */
-#contact{
-  background:linear-gradient(135deg,var(--bg) 0%,var(--bg3) 100%);
-  padding:80px 52px;
-  border-top:1px solid rgba(59,130,246,0.12);
-  position:relative;z-index:1;
-}
+#contact{background:linear-gradient(135deg,var(--bg) 0%,var(--bg3) 100%);padding:80px 52px;border-top:1px solid rgba(79,142,247,0.1);position:relative;z-index:1}
 .contact-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .ct-head{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);letter-spacing:-1.2px;color:var(--white);line-height:1.02;margin-bottom:16px}
 .ct-head em{color:var(--blue);font-style:normal}
-.ct-sub{font-size:14.5px;color:rgba(226,232,240,0.45);line-height:1.75}
+.ct-sub{font-size:14.5px;color:rgba(221,228,240,0.45);line-height:1.75}
 .ct-cards{display:flex;flex-direction:column;gap:10px}
-.ct-card{
-  display:flex;align-items:center;gap:14px;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:6px;padding:15px 20px;
-  color:var(--white);transition:all .3s;
-}
-.ct-card:hover{background:rgba(59,130,246,0.07);border-color:rgba(59,130,246,0.28);transform:translateX(5px)}
-.ct-icon{width:38px;height:38px;background:rgba(59,130,246,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:1px solid rgba(59,130,246,0.18)}
+.ct-card{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:15px 20px;color:var(--white);transition:all .3s}
+.ct-card:hover{background:rgba(79,142,247,0.07);border-color:rgba(79,142,247,0.28);transform:translateX(5px)}
+.ct-icon{width:38px;height:38px;background:rgba(79,142,247,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:1px solid rgba(79,142,247,0.18)}
 .ct-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em}
 .ct-val{font-size:13px;font-weight:500;margin-top:2px}
 
 /* ── FOOTER ── */
-footer{
-  background:var(--bg);border-top:1px solid rgba(255,255,255,0.04);
-  padding:20px 52px;display:flex;justify-content:space-between;align-items:center;
-  position:relative;z-index:1;
-}
+footer{background:var(--bg);border-top:1px solid rgba(255,255,255,0.04);padding:20px 52px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
 footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)}
 
 /* ── ANIMATIONS ── */
@@ -459,15 +339,19 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
     <div class="sec-eye">What I know</div>
     <h2 class="sec-title">Skills & Technologies</h2>
     <div class="skills-grid">
+
       <div class="sk-card">
         <div class="sk-icon">⚙️</div>
         <div class="sk-name">Backend</div>
         <div class="sk-tags">
-          <span class="sk-tag">Python</span><span class="sk-tag">Django</span><span class="sk-tag">DRF</span>
-          <span class="sk-tag">Node.js</span><span class="sk-tag">Celery</span><span class="sk-tag">JWT</span>
-          <span class="sk-tag">REST APIs</span><span class="sk-tag">Shell Script</span>
+          <span class="sk-tag">Python</span><span class="sk-tag">Django</span>
+          <span class="sk-tag">DRF</span><span class="sk-tag">Node.js</span>
+          <span class="sk-tag">Express.js</span><span class="sk-tag">Celery</span>
+          <span class="sk-tag">REST APIs</span><span class="sk-tag">JWT</span>
+          <span class="sk-tag">Shell Script</span>
         </div>
       </div>
+
       <div class="sk-card">
         <div class="sk-icon">🎨</div>
         <div class="sk-name">Frontend</div>
@@ -477,14 +361,17 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
           <span class="sk-tag">Tailwind CSS</span><span class="sk-tag">WordPress (PHP)</span>
         </div>
       </div>
+
       <div class="sk-card">
         <div class="sk-icon">🗄️</div>
         <div class="sk-name">Database & Cache</div>
         <div class="sk-tags">
           <span class="sk-tag">PostgreSQL</span><span class="sk-tag">MySQL</span>
           <span class="sk-tag">MongoDB</span><span class="sk-tag">Redis</span>
+          <span class="sk-tag">pgvector</span>
         </div>
       </div>
+
       <div class="sk-card">
         <div class="sk-icon">🐧</div>
         <div class="sk-name">Linux & SysAdmin</div>
@@ -495,14 +382,17 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
           <span class="sk-tag">Automated Backups</span>
         </div>
       </div>
+
       <div class="sk-card">
         <div class="sk-icon">🚀</div>
         <div class="sk-name">DevOps & CI/CD</div>
         <div class="sk-tags">
           <span class="sk-tag">Docker</span><span class="sk-tag">GitLab CI/CD</span>
-          <span class="sk-tag">GitHub Actions</span><span class="sk-tag">Gunicorn</span>
+          <span class="sk-tag">GitHub Actions</span><span class="sk-tag">Nginx</span>
+          <span class="sk-tag">Gunicorn</span><span class="sk-tag">Git</span>
         </div>
       </div>
+
       <div class="sk-card">
         <div class="sk-icon">🤖</div>
         <div class="sk-name">AI & Integrations</div>
@@ -513,15 +403,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
           <span class="sk-tag">Odoo</span>
         </div>
       </div>
-      <div class="sk-card">
-        <div class="sk-icon">🛠️</div>
-        <div class="sk-name">Tools</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Git</span><span class="sk-tag">WordPress</span>
-          <span class="sk-tag">pgvector</span><span class="sk-tag">Gunicorn</span>
-          <span class="sk-tag">PHP</span>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -533,7 +415,6 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
     <h2 class="sec-title">Projects</h2>
     <div class="proj-list">
 
-      <!-- Manverse -->
       <div class="proj-feat">
         <div class="proj-meta"><span class="proj-badge b-feat">⭐ Featured</span><span class="proj-yr">2026</span></div>
         <div class="proj-title">Manverse — Full-Stack E-Commerce Platform</div>
@@ -552,12 +433,11 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
         </div>
       </div>
 
-      <!-- MND -->
       <div class="proj-card">
         <div>
           <div class="proj-meta"><span class="proj-badge b-prod">Production</span><span class="proj-yr">2023–Present</span></div>
           <div class="proj-title">My Nature's Delight</div>
-          <p class="proj-desc">Full production system for a US-based e-commerce client. Built custom Authorize.net CIM payment gateway (PHP SDK), a bidirectional LDAP–WordPress user sync plugin with group-based access control, and an AI-driven API that generates and posts content to social media. Also handles Linux server management, Odoo ERP integration, and CI/CD.</p>
+          <p class="proj-desc">Full production system for a US-based e-commerce client. Built custom Authorize.net CIM payment gateway (PHP SDK), a bidirectional LDAP–WordPress sync plugin with group-based access control, and an AI-driven API that generates and posts content to social media. Linux server management, Odoo ERP integration, and GitLab CI/CD.</p>
           <div class="proj-techs">
             <span class="proj-tech">PHP</span><span class="proj-tech">WordPress</span>
             <span class="proj-tech">LDAP</span><span class="proj-tech">Authorize.net</span>
@@ -572,16 +452,15 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
         <div class="proj-arrow">↗</div>
       </div>
 
-      <!-- Plant Shop -->
       <div class="proj-card">
         <div>
           <div class="proj-meta"><span class="proj-badge b-live">Live</span><span class="proj-yr">2024</span></div>
           <div class="proj-title">Plant Shop</div>
-          <p class="proj-desc">Full-stack MERN e-commerce app — product browsing, cart, checkout with Stripe and SSLCommerz payment integration. Deployed on Vercel.</p>
+          <p class="proj-desc">Full-stack MERN e-commerce app — product browsing, cart, and checkout with Stripe and SSLCommerz payment integration. Deployed on Vercel.</p>
           <div class="proj-techs">
             <span class="proj-tech">React</span><span class="proj-tech">Node.js</span>
-            <span class="proj-tech">MongoDB</span><span class="proj-tech">Stripe</span>
-            <span class="proj-tech">SSLCommerz</span>
+            <span class="proj-tech">Express.js</span><span class="proj-tech">MongoDB</span>
+            <span class="proj-tech">Stripe</span><span class="proj-tech">SSLCommerz</span>
           </div>
           <div class="proj-links">
             <a href="https://plants-shop-client.vercel.app/" target="_blank" class="proj-link">Live ↗</a>
@@ -600,7 +479,6 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
     <div class="sec-eye">Where I worked</div>
     <h2 class="sec-title">Experience</h2>
     <div class="exp-list">
-
       <div class="exp-card">
         <div class="exp-time">Jun 2023 – Present<span class="exp-loc">Florida, USA · Remote</span></div>
         <div>
@@ -608,14 +486,13 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
           <div class="exp-co">My Nature's Delight (Client)</div>
           <ul class="exp-buls">
             <li>Implemented Authorize.net CIM payment gateway using official PHP SDK — customer profiles, recurring billing, live transactions</li>
-            <li>Built bidirectional LDAP–WordPress sync plugin with group-based WordPress role mapping</li>
-            <li>Developed AI-driven API for automated social media content generation and posting</li>
+            <li>Built bidirectional LDAP–WordPress sync plugin with group-based WordPress role mapping from LDAP groups</li>
+            <li>Developed AI-driven API for automated social media content generation and posting, live on MND marketing server</li>
             <li>Built custom WordPress plugins and Odoo ERP integrations; PHP and JavaScript frontend</li>
             <li>Spin up, monitor, patch, and upgrade Linux production servers on Kamatera — Docker, Nginx, GitLab CI/CD, automated backups, 99.9% uptime</li>
           </ul>
         </div>
       </div>
-
       <div class="exp-card">
         <div class="exp-time">Graduated<span class="exp-loc">CGPA: 3.71</span></div>
         <div>
@@ -626,7 +503,6 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 </section>
