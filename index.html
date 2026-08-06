@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ashik Mahbub — Full Stack Developer</title>
+<title>Ashik Mahbub — Full Stack Developer & AI/Backend Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -91,7 +91,7 @@ nav{
 .hero-role{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:0.05em;margin:20px 0 18px;display:flex;align-items:center;gap:10px}
 .hero-role::before{content:'';width:24px;height:1px;background:var(--blue);flex-shrink:0}
 
-.hero-desc{font-size:15px;line-height:1.82;color:rgba(221,228,240,0.72);max-width:500px;margin-bottom:36px;font-weight:400}
+.hero-desc{font-size:15px;line-height:1.85;color:rgba(221,228,240,0.72);max-width:520px;margin-bottom:36px;font-weight:400}
 
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
 
@@ -139,19 +139,22 @@ nav{
 .fb-val{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--blue2)}
 
 /* ── SECTIONS ── */
-.sec{padding:80px 52px;position:relative;z-index:1}
+.sec{padding:96px 52px;position:relative;z-index:1}
 .sec-inner{max-width:1160px;margin:0 auto}
-.sec-eye{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.sec-eye{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .sec-eye::before{content:'';width:18px;height:1.5px;background:var(--blue)}
-.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-0.8px;color:var(--white);margin-bottom:44px;line-height:1.05}
+.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-0.8px;color:var(--white);margin-bottom:12px;line-height:1.05}
+.sec-sub{font-size:14px;color:rgba(221,228,240,0.5);max-width:560px;margin-bottom:52px;line-height:1.7}
 
 /* ── SKILLS ── */
 #skills{background:var(--bg2)}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.03)}
-.sk-card{background:var(--surface);padding:28px;transition:all .3s;cursor:default;border:1px solid rgba(255,255,255,0.06)}
+.sk-card{background:var(--surface);padding:30px 28px;transition:all .3s;cursor:default;border:1px solid rgba(255,255,255,0.06)}
 .sk-card:hover{background:var(--surface2);border-color:rgba(79,142,247,0.3)}
-.sk-icon{font-size:22px;margin-bottom:12px}
-.sk-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--blue2);margin-bottom:14px;letter-spacing:0.01em}
+.sk-card.sk-highlight{background:linear-gradient(160deg,var(--surface) 0%,rgba(79,142,247,0.09) 100%);border-color:rgba(79,142,247,0.22)}
+.sk-icon{font-size:22px;margin-bottom:14px}
+.sk-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--blue2);margin-bottom:6px;letter-spacing:0.01em}
+.sk-note{font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;color:rgba(221,228,240,0.42);margin-bottom:14px;line-height:1.5}
 .sk-tags{display:flex;flex-wrap:wrap;gap:6px}
 .sk-tag{
   font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;font-weight:500;
@@ -165,21 +168,22 @@ nav{
 /* ── PROJECTS ── */
 #projects{background:var(--bg3)}
 .proj-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.12)}
-.proj-feat{background:linear-gradient(135deg,var(--bg2) 0%,var(--surface) 100%);padding:42px;border-left:3px solid var(--blue);transition:all .3s}
+.proj-feat{background:linear-gradient(135deg,var(--bg2) 0%,var(--surface) 100%);padding:44px;border-left:3px solid var(--blue);transition:all .3s}
 .proj-feat:hover{background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%)}
-.proj-card{background:var(--bg2);padding:30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;transition:all .3s;border-left:3px solid transparent}
+.proj-card{background:var(--bg2);padding:32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;transition:all .3s;border-left:3px solid transparent}
 .proj-card:hover{background:var(--surface);border-left-color:rgba(79,142,247,0.5)}
 
-.proj-meta{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.proj-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .proj-badge{font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:3px 10px;border-radius:3px;text-transform:uppercase;letter-spacing:0.1em}
 .b-feat{background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.3);color:var(--blue2)}
 .b-live{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.22);color:#4ade80}
 .b-prod{background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.22);color:#c084fc}
+.b-ai{background:rgba(250,204,21,0.08);border:1px solid rgba(250,204,21,0.25);color:#facc15}
 .proj-yr{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted)}
-.proj-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.3px;color:var(--white);margin-bottom:10px}
+.proj-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.3px;color:var(--white);margin-bottom:12px}
 .proj-feat .proj-title{font-size:26px}
-.proj-desc{font-size:13.5px;line-height:1.75;color:rgba(221,228,240,0.62);margin-bottom:16px;max-width:640px}
-.proj-techs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.proj-desc{font-size:13.5px;line-height:1.8;color:rgba(221,228,240,0.62);margin-bottom:18px;max-width:660px}
+.proj-techs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
 .proj-tech{
   font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:500;
   padding:3px 10px;border-radius:4px;
@@ -199,22 +203,22 @@ nav{
 /* ── EXPERIENCE ── */
 #experience{background:var(--bg2)}
 .exp-list{display:flex;flex-direction:column;gap:2px;background:rgba(0,0,0,0.1)}
-.exp-card{background:var(--bg3);display:grid;grid-template-columns:155px 1fr;gap:28px;padding:28px 32px;transition:all .3s;border-left:3px solid transparent}
+.exp-card{background:var(--bg3);display:grid;grid-template-columns:165px 1fr;gap:28px;padding:32px;transition:all .3s;border-left:3px solid transparent}
 .exp-card:hover{background:var(--surface);border-left-color:var(--blue)}
 .exp-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);line-height:1.9;padding-top:2px}
 .exp-loc{display:block;color:var(--blue2);font-size:9.5px;margin-top:4px}
 .exp-role{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;color:var(--white);margin-bottom:2px;letter-spacing:-0.2px}
-.exp-co{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--blue2);margin-bottom:12px;opacity:0.8}
-.exp-buls{list-style:none;display:flex;flex-direction:column;gap:5px}
-.exp-buls li{font-size:13px;color:rgba(221,228,240,0.65);line-height:1.68;padding-left:18px;position:relative}
+.exp-co{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--blue2);margin-bottom:14px;opacity:0.8}
+.exp-buls{list-style:none;display:flex;flex-direction:column;gap:7px}
+.exp-buls li{font-size:13px;color:rgba(221,228,240,0.65);line-height:1.7;padding-left:18px;position:relative}
 .exp-buls li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:10px;top:3px;opacity:0.7}
 
 /* ── CONTACT ── */
-#contact{background:linear-gradient(135deg,var(--bg) 0%,var(--bg3) 100%);padding:80px 52px;border-top:1px solid rgba(79,142,247,0.1);position:relative;z-index:1}
+#contact{background:linear-gradient(135deg,var(--bg) 0%,var(--bg3) 100%);padding:96px 52px;border-top:1px solid rgba(79,142,247,0.1);position:relative;z-index:1}
 .contact-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.ct-head{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);letter-spacing:-1.2px;color:var(--white);line-height:1.02;margin-bottom:16px}
+.ct-head{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4.5vw,52px);letter-spacing:-1.2px;color:var(--white);line-height:1.05;margin-bottom:18px}
 .ct-head em{color:var(--blue);font-style:normal}
-.ct-sub{font-size:14.5px;color:rgba(221,228,240,0.45);line-height:1.75}
+.ct-sub{font-size:14.5px;color:rgba(221,228,240,0.45);line-height:1.8}
 .ct-cards{display:flex;flex-direction:column;gap:10px}
 .ct-card{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:15px 20px;color:var(--white);transition:all .3s}
 .ct-card:hover{background:rgba(79,142,247,0.07);border-color:rgba(79,142,247,0.28);transform:translateX(5px)}
@@ -223,7 +227,7 @@ nav{
 .ct-val{font-size:13px;font-weight:500;margin-top:2px}
 
 /* ── FOOTER ── */
-footer{background:var(--bg);border-top:1px solid rgba(255,255,255,0.04);padding:20px 52px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+footer{background:var(--bg);border-top:1px solid rgba(255,255,255,0.04);padding:22px 52px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
 footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)}
 
 /* ── ANIMATIONS ── */
@@ -250,16 +254,17 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
   .photo-accent,.photo-accent2,.float-badge{display:none}
   .hero-name{font-size:clamp(38px,11vw,58px)}
   .stats-row{gap:20px;flex-wrap:wrap}
-  .sec{padding:56px 20px}
-  .sec-title{margin-bottom:28px}
+  .sec{padding:64px 20px}
+  .sec-title{margin-bottom:10px}
+  .sec-sub{margin-bottom:32px}
   .skills-grid{grid-template-columns:repeat(2,1fr);gap:1px}
-  .sk-card{padding:20px}
-  .proj-feat{padding:24px}
-  .proj-card{grid-template-columns:1fr;padding:22px;gap:14px}
+  .sk-card{padding:22px}
+  .proj-feat{padding:26px}
+  .proj-card{grid-template-columns:1fr;padding:24px;gap:14px}
   .proj-arrow{display:none}
   .proj-feat .proj-title{font-size:20px}
-  .exp-card{grid-template-columns:1fr;gap:8px;padding:20px}
-  #contact{padding:60px 20px}
+  .exp-card{grid-template-columns:1fr;gap:10px;padding:22px}
+  #contact{padding:64px 20px}
   .contact-inner{grid-template-columns:1fr;gap:36px}
   footer{padding:18px 20px;flex-direction:column;gap:6px;text-align:center}
 }
@@ -304,8 +309,8 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
     <div>
       <div class="avail fu d0"><span class="avail-dot"></span>Available for remote work</div>
       <h1 class="hero-name fu d1">Ashik <span class="accent">Mahbub</span></h1>
-      <p class="hero-role fu d2">Full Stack Developer & Systems Administrator · My Nature's Delight, USA</p>
-      <p class="hero-desc fu d3">I build and run production systems that actually stay live. For 2+ years I've been the sole developer and Linux sysadmin for a US-based e-commerce company — shipping custom payment gateways, LDAP integrations, AI-powered APIs, and keeping servers at 99.9% uptime. I work across the full stack: Django & Node.js backends, React & Next.js frontends, MERN projects, PostgreSQL, Redis, Docker, and CI/CD — all the way down to the Linux server itself.</p>
+      <p class="hero-role fu d2">Full Stack Developer · Systems Administrator · AI/Backend Engineer</p>
+      <p class="hero-desc fu d3">I build and run production systems that actually stay live. For 3+ years I've been the sole developer and Linux sysadmin for a US-based e-commerce company — shipping custom payment gateways, LDAP integrations, and AI-powered APIs across a 30+ server cloud footprint at 99.9% uptime. More recently I've been building Retrieval-Augmented Generation systems end to end: two independent RAG pipelines using pgvector, fastembed, and Groq. I work across the full stack — Django, FastAPI & Node.js backends, React & Next.js frontends — all the way down to the Linux server itself.</p>
       <div class="cta-row fu d4">
         <a href="#projects" class="btn-blue">View Projects →</a>
         <a href="/resume.pdf" download class="btn-cv">↓ Download CV</a>
@@ -313,9 +318,9 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
         <a href="https://linkedin.com/in/ashik-mahbub-a691231b1" target="_blank" class="btn-ghost">LinkedIn ↗</a>
       </div>
       <div class="stats-row fu d5">
-        <div><div class="stat-n">2+</div><div class="stat-l">Years Exp</div></div>
+        <div><div class="stat-n">3+</div><div class="stat-l">Years Exp</div></div>
         <div><div class="stat-n">4</div><div class="stat-l">Live Projects</div></div>
-        <div><div class="stat-n">3</div><div class="stat-l">Live Servers</div></div>
+        <div><div class="stat-n">30+</div><div class="stat-l">Servers Managed</div></div>
         <div><div class="stat-n">99.9%</div><div class="stat-l">Uptime</div></div>
       </div>
     </div>
@@ -327,7 +332,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
       </div>
       <div class="float-badge">
         <div class="fb-icon">⚡</div>
-        <div><div class="fb-lbl">Experience</div><div class="fb-val">2+ Years</div></div>
+        <div><div class="fb-lbl">Experience</div><div class="fb-val">3+ Years</div></div>
       </div>
     </div>
   </div>
@@ -338,6 +343,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
   <div class="sec-inner">
     <div class="sec-eye">What I know</div>
     <h2 class="sec-title">Skills & Technologies</h2>
+    <p class="sec-sub">From RAG pipelines and backend APIs to the Linux boxes they run on — I own the stack top to bottom.</p>
     <div class="skills-grid">
 
       <div class="sk-card">
@@ -345,10 +351,22 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
         <div class="sk-name">Backend</div>
         <div class="sk-tags">
           <span class="sk-tag">Python</span><span class="sk-tag">Django</span>
-          <span class="sk-tag">DRF</span><span class="sk-tag">Node.js</span>
-          <span class="sk-tag">Express.js</span><span class="sk-tag">Celery</span>
-          <span class="sk-tag">REST APIs</span><span class="sk-tag">JWT</span>
-          <span class="sk-tag">Shell Script</span>
+          <span class="sk-tag">DRF</span><span class="sk-tag">FastAPI</span>
+          <span class="sk-tag">Node.js</span><span class="sk-tag">Express.js</span>
+          <span class="sk-tag">Celery</span><span class="sk-tag">REST APIs</span>
+          <span class="sk-tag">JWT</span><span class="sk-tag">Shell Script</span>
+        </div>
+      </div>
+
+      <div class="sk-card sk-highlight">
+        <div class="sk-icon">🧠</div>
+        <div class="sk-name">AI & RAG Engineering</div>
+        <div class="sk-note">Built two independent production RAG pipelines</div>
+        <div class="sk-tags">
+          <span class="sk-tag">RAG Pipeline Design</span><span class="sk-tag">pgvector</span>
+          <span class="sk-tag">fastembed</span><span class="sk-tag">Groq AI</span>
+          <span class="sk-tag">OpenAI API</span><span class="sk-tag">Vector Search & Embeddings</span>
+          <span class="sk-tag">LangChain</span>
         </div>
       </div>
 
@@ -366,41 +384,30 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
         <div class="sk-icon">🗄️</div>
         <div class="sk-name">Database & Cache</div>
         <div class="sk-tags">
-          <span class="sk-tag">PostgreSQL</span><span class="sk-tag">MySQL</span>
-          <span class="sk-tag">MongoDB</span><span class="sk-tag">Redis</span>
-          <span class="sk-tag">pgvector</span>
+          <span class="sk-tag">PostgreSQL</span><span class="sk-tag">pgvector</span>
+          <span class="sk-tag">MySQL</span><span class="sk-tag">MongoDB</span>
+          <span class="sk-tag">Redis</span>
         </div>
       </div>
 
       <div class="sk-card">
         <div class="sk-icon">🐧</div>
-        <div class="sk-name">Linux & SysAdmin</div>
+        <div class="sk-name">Linux & DevOps</div>
         <div class="sk-tags">
-          <span class="sk-tag">Server Provisioning</span><span class="sk-tag">Monitoring</span>
-          <span class="sk-tag">Patching & Upgrades</span><span class="sk-tag">Nginx</span>
-          <span class="sk-tag">Kamatera</span><span class="sk-tag">AWS</span>
-          <span class="sk-tag">Automated Backups</span>
+          <span class="sk-tag">Linux Server Admin</span><span class="sk-tag">Kamatera</span>
+          <span class="sk-tag">AWS</span><span class="sk-tag">Docker</span>
+          <span class="sk-tag">GitLab CI/CD</span><span class="sk-tag">GitHub Actions</span>
+          <span class="sk-tag">Nginx</span><span class="sk-tag">Automated Backups</span>
         </div>
       </div>
 
       <div class="sk-card">
-        <div class="sk-icon">🚀</div>
-        <div class="sk-name">DevOps & CI/CD</div>
+        <div class="sk-icon">🔌</div>
+        <div class="sk-name">Integrations & ERP</div>
         <div class="sk-tags">
-          <span class="sk-tag">Docker</span><span class="sk-tag">GitLab CI/CD</span>
-          <span class="sk-tag">GitHub Actions</span><span class="sk-tag">Nginx</span>
-          <span class="sk-tag">Gunicorn</span><span class="sk-tag">Git</span>
-        </div>
-      </div>
-
-      <div class="sk-card">
-        <div class="sk-icon">🤖</div>
-        <div class="sk-name">AI & Integrations</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Groq AI</span><span class="sk-tag">OpenAI API</span>
-          <span class="sk-tag">Authorize.net SDK</span><span class="sk-tag">Stripe</span>
-          <span class="sk-tag">SSLCommerz</span><span class="sk-tag">LDAP</span>
-          <span class="sk-tag">Odoo</span>
+          <span class="sk-tag">Odoo ERP</span><span class="sk-tag">LDAP</span>
+          <span class="sk-tag">Authorize.net PHP SDK</span><span class="sk-tag">Stripe</span>
+          <span class="sk-tag">SSLCommerz</span><span class="sk-tag">Git</span>
         </div>
       </div>
 
@@ -413,20 +420,20 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
   <div class="sec-inner">
     <div class="sec-eye">What I built</div>
     <h2 class="sec-title">Projects</h2>
+    <p class="sec-sub">Production systems and independent builds — from payment gateways to RAG pipelines.</p>
     <div class="proj-list">
 
       <div class="proj-feat">
         <div class="proj-meta"><span class="proj-badge b-feat">⭐ Featured</span><span class="proj-yr">2026</span></div>
-        <div class="proj-title">Manverse — Full-Stack E-Commerce Platform</div>
-        <p class="proj-desc">End-to-end e-commerce platform built from scratch — product catalog, cart, checkout, order management, JWT auth, Stripe and SSLCommerz payment integrations, and AI chatbot powered by Groq. Fully containerized with Docker, self-hosted CI/CD via GitHub Actions on VPS, Nginx reverse proxy.</p>
+        <div class="proj-title">Manverse — Full-Stack E-Commerce Platform with RAG AI Chatbot</div>
+        <p class="proj-desc">End-to-end e-commerce platform built from scratch — product catalog, cart, checkout, order management, JWT auth, and Stripe & SSLCommerz payment integrations. Includes a production RAG pipeline: pgvector for vector storage, fastembed (BAAI/bge-small-en-v1.5, 384-dim) for embeddings, and Groq (llama-3.1-8b-instant) for generation, exposed through a Django chat app with a Next.js streaming frontend. Fully containerized with Docker, self-hosted CI/CD via GitHub Actions on VPS, Nginx reverse proxy.</p>
         <div class="proj-techs">
           <span class="proj-tech">Django</span><span class="proj-tech">Next.js</span>
-          <span class="proj-tech">PostgreSQL</span><span class="proj-tech">Redis</span>
+          <span class="proj-tech">PostgreSQL (pgvector)</span><span class="proj-tech">Redis</span>
           <span class="proj-tech">Celery</span><span class="proj-tech">Docker</span>
-          <span class="proj-tech">CI/CD</span><span class="proj-tech">VPS Deployment</span>
-          <span class="proj-tech">GitHub Actions</span><span class="proj-tech">Nginx</span>
-          <span class="proj-tech">Groq AI</span><span class="proj-tech">Stripe</span>
-          <span class="proj-tech">SSLCommerz</span>
+          <span class="proj-tech">CI/CD</span><span class="proj-tech">GitHub Actions</span>
+          <span class="proj-tech">Nginx</span><span class="proj-tech">Groq AI</span>
+          <span class="proj-tech">Stripe</span><span class="proj-tech">SSLCommerz</span>
         </div>
         <div class="proj-links">
           <a href="http://manverse.duckdns.org/" target="_blank" class="proj-link">Live Demo ↗</a>
@@ -438,7 +445,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
         <div>
           <div class="proj-meta"><span class="proj-badge b-prod">Production</span><span class="proj-yr">2023–Present</span></div>
           <div class="proj-title">My Nature's Delight</div>
-          <p class="proj-desc">Full production system for a US-based e-commerce client. Built custom Authorize.net CIM payment gateway (PHP SDK), a bidirectional LDAP–WordPress sync plugin with group-based access control, and an AI-driven API that generates and posts content to social media. Linux server management, Odoo ERP integration, and GitLab CI/CD.</p>
+          <p class="proj-desc">Full production system for a US-based e-commerce client. Built a custom Authorize.net CIM payment gateway (PHP SDK) handling customer profiles, tokenized cards, and recurring billing; a bidirectional LDAP–WordPress sync plugin with group-based role mapping for automated user provisioning and access control; and an AI-driven API that generates and auto-posts marketing content to social media. Owns Linux server administration, Odoo ERP integrations, and GitLab CI/CD across a 30+ server Kamatera cloud footprint.</p>
           <div class="proj-techs">
             <span class="proj-tech">PHP</span><span class="proj-tech">WordPress</span>
             <span class="proj-tech">LDAP</span><span class="proj-tech">Authorize.net</span>
@@ -455,6 +462,20 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
 
       <div class="proj-card">
         <div>
+          <div class="proj-meta"><span class="proj-badge b-ai">RAG System</span><span class="proj-yr">2026</span></div>
+          <div class="proj-title">AI Product Assistant — RAG over WooCommerce Catalog</div>
+          <p class="proj-desc">A second, independent RAG implementation built on a different stack from Manverse — ingests and embeds a live WooCommerce catalog with pgvector and fastembed, and answers product questions through Groq with grounded, low-latency responses. Built to demonstrate RAG design across a different data domain and framework (FastAPI vs. Django).</p>
+          <div class="proj-techs">
+            <span class="proj-tech">FastAPI</span><span class="proj-tech">PostgreSQL (pgvector)</span>
+            <span class="proj-tech">fastembed</span><span class="proj-tech">Groq AI</span>
+            <span class="proj-tech">WooCommerce REST API</span>
+          </div>
+        </div>
+        <div class="proj-arrow">↗</div>
+      </div>
+
+      <div class="proj-card">
+        <div>
           <div class="proj-meta"><span class="proj-badge b-live">Live</span><span class="proj-yr">2024</span></div>
           <div class="proj-title">Plant Shop</div>
           <p class="proj-desc">Full-stack MERN e-commerce app — product browsing, cart, and checkout with Stripe and SSLCommerz payment integration. Firebase Authentication for user management. Containerized with Docker and deployed on a real VPS via CI/CD pipeline.</p>
@@ -463,10 +484,11 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
             <span class="proj-tech">Express.js</span><span class="proj-tech">MongoDB</span>
             <span class="proj-tech">Firebase Authentication</span><span class="proj-tech">Stripe</span>
             <span class="proj-tech">SSLCommerz</span><span class="proj-tech">Docker</span>
-            <span class="proj-tech">CI/CD</span><span class="proj-tech">VPS Deployment</span>
+            <span class="proj-tech">CI/CD</span>
           </div>
           <div class="proj-links">
             <a href="http://plants-shop.duckdns.org/" target="_blank" class="proj-link">Live ↗</a>
+            <a href="https://github.com/Ashikmahbub/plant-shop" target="_blank" class="proj-link">GitHub ↗</a>
           </div>
         </div>
         <div class="proj-arrow">↗</div>
@@ -481,27 +503,28 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
   <div class="sec-inner">
     <div class="sec-eye">Where I worked</div>
     <h2 class="sec-title">Experience</h2>
+    <p class="sec-sub">Three-plus years as the sole engineer keeping a production e-commerce stack alive.</p>
     <div class="exp-list">
       <div class="exp-card">
-        <div class="exp-time">Jun 2023 – Present<span class="exp-loc">Florida, USA · Remote</span></div>
+        <div class="exp-time">Jun 2023 – Present<span class="exp-loc">3+ yrs · Remote</span></div>
         <div>
           <div class="exp-role">Full Stack Developer & Systems Administrator</div>
           <div class="exp-co">My Nature's Delight · Florida, USA (Remote)</div>
           <ul class="exp-buls">
             <li>Sole developer and Linux sysadmin responsible for the entire technology stack — from backend APIs to production server health</li>
-            <li>Built a custom Authorize.net CIM payment gateway in PHP — customer profiles, tokenized cards, recurring billing, live transactions</li>
-            <li>Developed a bidirectional LDAP–WordPress sync plugin with group-based role mapping — automated user provisioning and access control</li>
-            <li>Built an AI-powered social media API using Groq — generates and auto-posts marketing content, live on production servers</li>
+            <li>Implemented an Authorize.net CIM payment gateway using the official PHP SDK — customer profiles, tokenized cards, recurring billing, live transactions</li>
+            <li>Built a bidirectional LDAP–WordPress sync plugin with group-based role mapping — automated user provisioning and access control</li>
+            <li>Developed an AI-driven API using Groq that generates content and auto-posts to social media, deployed on the MND marketing server</li>
             <li>Delivered full stack features across MERN (MongoDB, Express, React, Node.js) and Django + React projects</li>
-            <li>Built WordPress plugins and Odoo ERP integrations; custom PHP/JavaScript frontend work across multiple client sites</li>
-            <li>Provisioned, monitored, and maintained Linux production servers on Kamatera and AWS — Docker, Nginx, GitLab CI/CD, automated backups — 99.9% uptime maintained consistently</li>
+            <li>Built custom WordPress plugins and Odoo ERP backend integrations; custom PHP/JavaScript frontend work across multiple client sites</li>
+            <li>Administer, monitor, patch, and upgrade Linux production servers across a 30+ server Kamatera cloud footprint — Docker, Nginx reverse proxy, GitLab CI/CD, automated backups — 99.9% uptime maintained consistently</li>
           </ul>
         </div>
       </div>
       <div class="exp-card">
-        <div class="exp-time">Graduated<span class="exp-loc">CGPA: 3.71</span></div>
+        <div class="exp-time">Education<span class="exp-loc">CGPA: 3.71</span></div>
         <div>
-          <div class="exp-role">B.Sc. Electrical & Electronics Eng.</div>
+          <div class="exp-role">B.Sc. Electrical & Electronics Engineering</div>
           <div class="exp-co">Daffodil International University · Dhaka</div>
           <ul class="exp-buls">
             <li>Strong foundation in engineering, systems design, and applied programming</li>
@@ -541,7 +564,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted
 </section>
 
 <footer>
-  <p>© 2026 Ashik Mahbub — Full Stack Developer</p>
+  <p>© 2026 Ashik Mahbub — Full Stack Developer & AI/Backend Engineer</p>
   <p>Barisal, Bangladesh</p>
 </footer>
 
